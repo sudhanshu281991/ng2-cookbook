@@ -1,0 +1,19 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Chris",
+            "username": "Sudhanshu"
+        },
+        {
+            "id": 11,
+            "name": "Chris1",
+            "username": "Sudhanshu1"
+        },
+        {
+            "id": 111,
+            "name": "Chris2",
+            "username": "Sudhanshu2"
+        }
+    ]
+}

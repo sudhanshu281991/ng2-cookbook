@@ -1,0 +1,20 @@
+<h2>{{TEXT_REACTIVE_FORM}}</h2>
+<form [formGroup]="registerForm" class="col-md-6 container">
+
+    <label>{{TEXT_FIRST_NAME}}:</label>
+    <input type="text" formControlName="firstname">
+    <p *ngIf="registerForm.control.firstname.errors">First name is required!</p><br>
+  
+    <label>{{TEXT_STREET}}:</label>
+    <input type="text" formControlName="street">
+    <p *ngIf="registerForm.controls.lastname.errors">Last name is required!</p><br>
+
+    <label>{{TEXT_ZIP}}:</label>
+    <input type="text" formControlName="zip"><br>
+
+    <label>{{TEXT_CITY}}:</label>
+    <input type="text" formControlName="city"><br>
+
+    <button type="submit">{{BUTTON_SUBMIT}}</button>
+
+</form>

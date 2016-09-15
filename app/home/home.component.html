@@ -1,0 +1,10 @@
+<div class="row">
+    <select (change)="getSelectedLocation($event.target.value,$event.target.selectedIndex)">
+    <option *ngFor="let cityData of city | async">{{cityData.CityName}}</option>
+</select>
+    <select>
+    <option *ngFor="let locations of location | async">{{locations}}</option>
+</select>
+</div>
+
+<home-collection class="row" [collection]="homeViewCollection"></home-collection>
