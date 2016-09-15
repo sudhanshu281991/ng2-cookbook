@@ -14,6 +14,7 @@ var HomeComponent = (function () {
     function HomeComponent(homeService) {
         this.homeService = homeService;
         this.homeViewCollection = [];
+        this.homeViewOccassion = [];
     }
     HomeComponent.prototype.ngOnInit = function () {
         this.getCityData();
@@ -41,6 +42,7 @@ var HomeComponent = (function () {
         this.initialHomeViewData = this.homeService.getInitialHomeData(this.selectedCity, locationSelected);
         this.initialHomeViewData.subscribe(function (comments) {
             _this.homeViewCollection = comments.Collection;
+            _this.homeViewOccassion = comments.Occasions;
         });
     };
     HomeComponent.prototype.getSelectedLocation = function (citySelected, index) {

@@ -11,16 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
-var user_profile_component_1 = require('./users/user-profile.component');
-var user_form_component_1 = require('./users/user-form.component');
 var http_1 = require('@angular/http');
 var app_routing_1 = require('./app.routing');
 var app_component_1 = require('./app.component');
-var http_request_component_1 = require('./http-request/http-request.component');
-var user_data_component_1 = require('./user-data/user-data.component');
-var user_profile_component_2 = require('./user-profile/user-profile.component');
 var home_component_1 = require('./home/home.component');
 var collection_component_1 = require('./home/collection/collection.component');
+var occassion_component_1 = require('./home/occassion/occassion.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -36,13 +32,9 @@ var AppModule = (function () {
             ],
             declarations: [
                 app_component_1.AppComponent,
-                user_profile_component_1.UserProfileComponent,
-                user_form_component_1.UserFormComponent,
-                http_request_component_1.HttpTestComponent,
-                user_data_component_1.UserDataComponent,
-                user_profile_component_2.UserInformationComponent,
                 home_component_1.HomeComponent,
-                collection_component_1.HomeCollectionComponent
+                collection_component_1.HomeCollectionComponent,
+                occassion_component_1.HomeOccassionComponent
             ],
             providers: [
                 app_routing_1.appRoutingProviders,
