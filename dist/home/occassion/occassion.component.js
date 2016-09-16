@@ -41,7 +41,7 @@ var HomeOccassionComponent = (function () {
         core_1.Component({
             selector: 'home-occassion',
             templateUrl: './app/home/occassion/occassion.component.html',
-            styles: ["\n      img{\n            width: 100 %;\n            height: 200px;\n        }\n            .more_occassion{\n                height: 100px;\n                width: 200px;\n                background-color:red;\n                color:white;\n            }\n            "],
+            styles: ["\n      img{\n            width: 100 %;\n            height: 200px;\n        }\n            .more_occassion{\n                background-color:red;\n                color:white;\n                padding:20px;\n                height:200px;\n                margin-left:22px;\n                line-height:7;\n                font-size:20px;\n                cursor:pointer;\n            }\n            "],
         }), 
         __metadata('design:paramtypes', [])
     ], HomeOccassionComponent);

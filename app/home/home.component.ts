@@ -4,6 +4,8 @@ import {HomeService} from './home.service';
 import { Observable } from 'rxjs/Observable';
 import {Collection} from './model/collection';
 import {Occassion} from './model/occassion';
+import {HomeView} from './model/home';
+import {Blog} from './model/blogs';
 
 @Component({
     providers: [HomeService],
@@ -15,9 +17,10 @@ export class HomeComponent implements OnInit {
     city: Observable<City[]>;
     location: Observable<string[]>;
     selectedCity: City;
-    initialHomeViewData:any;
+    initialHomeViewData:Observable<HomeView>;
     homeViewCollection:Array<Collection>=[];
     homeViewOccassion:Array<Occassion>=[];
+    homeViewBlog:Array<Blog>;
     constructor(private homeService: HomeService) { }
     ngOnInit() {
         this.getCityData();
@@ -44,6 +47,7 @@ export class HomeComponent implements OnInit {
         this.initialHomeViewData.subscribe(comments =>{
             this.homeViewCollection=comments.Collection;
             this.homeViewOccassion=comments.Occasions;
+            this.homeViewBlog=comments.Blogs;
         });
     }
     getSelectedLocation(citySelected: string,index:number) {

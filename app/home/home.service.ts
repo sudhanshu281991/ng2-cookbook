@@ -3,6 +3,7 @@ import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs/observable';
 import homeConstants = require('./home.constant');
 import {City} from './model/city';
+import {HomeView} from './model/home';
 
 
 
@@ -23,7 +24,7 @@ export class HomeService {
             .map(this.extractData)
             .catch(this.handleError);
     }
-    getInitialHomeData(selectedCity: City, locationSelected: string): Observable<any> {
+    getInitialHomeData(selectedCity: City, locationSelected: string): Observable<HomeView> {
         let body: string = JSON.stringify({
             "City": selectedCity.CityName,
             "MinPrice": selectedCity.MinPrice,

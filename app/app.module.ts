@@ -6,7 +6,8 @@ import {routing, appRoutingProviders} from './app.routing';
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 import {HomeCollectionComponent} from './home/collection/collection.component';
-import {HomeOccassionComponent} from './home/occassion/occassion.component'
+import {HomeOccassionComponent} from './home/occassion/occassion.component';
+import {HomeBlogComponent} from './home/blogs/blogs.component';
 
 
 
@@ -23,7 +24,8 @@ import {HomeOccassionComponent} from './home/occassion/occassion.component'
         AppComponent,
         HomeComponent,
         HomeCollectionComponent,
-        HomeOccassionComponent
+        HomeOccassionComponent,
+        HomeBlogComponent
     ],
     providers: [
         appRoutingProviders,

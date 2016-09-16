@@ -17,6 +17,7 @@ var app_component_1 = require('./app.component');
 var home_component_1 = require('./home/home.component');
 var collection_component_1 = require('./home/collection/collection.component');
 var occassion_component_1 = require('./home/occassion/occassion.component');
+var blogs_component_1 = require('./home/blogs/blogs.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -34,7 +35,8 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 home_component_1.HomeComponent,
                 collection_component_1.HomeCollectionComponent,
-                occassion_component_1.HomeOccassionComponent
+                occassion_component_1.HomeOccassionComponent,
+                blogs_component_1.HomeBlogComponent
             ],
             providers: [
                 app_routing_1.appRoutingProviders,

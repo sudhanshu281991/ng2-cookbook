@@ -43,6 +43,7 @@ var HomeComponent = (function () {
         this.initialHomeViewData.subscribe(function (comments) {
             _this.homeViewCollection = comments.Collection;
             _this.homeViewOccassion = comments.Occasions;
+            _this.homeViewBlog = comments.Blogs;
         });
     };
     HomeComponent.prototype.getSelectedLocation = function (citySelected, index) {
