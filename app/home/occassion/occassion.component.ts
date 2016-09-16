@@ -13,6 +13,7 @@ import {Occassion} from '../model/occassion';
                 height: 100px;
                 width: 200px;
                 background-color:red;
+                color:white;
             }
             `],
 })
@@ -27,5 +28,11 @@ export class HomeOccassionComponent {
     get occassionLength() {
         return this._occassionLength;
     }
-   
+    loadMoreOccassion() {
+        this._occassionLength = this.occassion.length;
+    }
+    loadLessOccassion(){
+         this._occassionLength=10;
+    }
+
 }

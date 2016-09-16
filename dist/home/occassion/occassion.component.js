@@ -22,6 +22,12 @@ var HomeOccassionComponent = (function () {
         enumerable: true,
         configurable: true
     });
+    HomeOccassionComponent.prototype.loadMoreOccassion = function () {
+        this._occassionLength = this.occassion.length;
+    };
+    HomeOccassionComponent.prototype.loadLessOccassion = function () {
+        this._occassionLength = 10;
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Array)
@@ -35,7 +41,7 @@ var HomeOccassionComponent = (function () {
         core_1.Component({
             selector: 'home-occassion',
             templateUrl: './app/home/occassion/occassion.component.html',
-            styles: ["\n      img{\n            width: 100 %;\n            height: 200px;\n        }\n            .more_occassion{\n                height: 100px;\n                width: 200px;\n                background-color:red;\n            }\n            "],
+            styles: ["\n      img{\n            width: 100 %;\n            height: 200px;\n        }\n            .more_occassion{\n                height: 100px;\n                width: 200px;\n                background-color:red;\n                color:white;\n            }\n            "],
         }), 
         __metadata('design:paramtypes', [])
     ], HomeOccassionComponent);
