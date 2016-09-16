@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Http, Response, Headers, RequestOptions} from '@angular/http';
+import {Http, Response, Headers, RequestOptions,URLSearchParams} from '@angular/http';
 import {Observable} from 'rxjs/observable';
 import homeConstants = require('./home.constant');
 import {City} from './model/city';
@@ -25,14 +25,13 @@ export class HomeService {
             .catch(this.handleError);
     }
     getInitialHomeData(selectedCity: City, locationSelected: string): Observable<HomeView> {
-        let body: string = JSON.stringify({
-            "City": selectedCity.CityName,
-            "MinPrice": selectedCity.MinPrice,
-            "MaxPrice": selectedCity.MaxPrice,
-            "MinCapacity": selectedCity.MinCapacity,
-            "MaxCapacity": selectedCity.MaxCapacity,
-            "Location": locationSelected
-        });
+        let body:any=new URLSearchParams();
+        body.set('City', selectedCity.CityName);
+        body.set('MinPrice', selectedCity.MinPrice);
+        body.set('MaxPrice', selectedCity.MaxPrice);
+        body.set('MinCapacity', selectedCity.MinCapacity);
+        body.set('MaxCapacity', selectedCity.MaxCapacity);
+        body.set('Location', locationSelected);
         let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
         let options = new RequestOptions({ headers: headers, withCredentials: true });
         return this.http.post(this.homeInitialUrl, body, options)

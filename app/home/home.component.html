@@ -2,7 +2,7 @@
     <select (change)="getSelectedLocation($event.target.value,$event.target.selectedIndex)">
          <option *ngFor="let cityData of city | async">{{cityData.CityName}}</option>
     </select>
-    <select>
+    <select (change)="getSelectedLocationHomeView($event.target.value)">
        <option *ngFor="let locations of location | async">{{locations}}</option>
     </select>
 </div>

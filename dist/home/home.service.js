@@ -30,14 +30,13 @@ var HomeService = (function () {
             .catch(this.handleError);
     };
     HomeService.prototype.getInitialHomeData = function (selectedCity, locationSelected) {
-        var body = JSON.stringify({
-            "City": selectedCity.CityName,
-            "MinPrice": selectedCity.MinPrice,
-            "MaxPrice": selectedCity.MaxPrice,
-            "MinCapacity": selectedCity.MinCapacity,
-            "MaxCapacity": selectedCity.MaxCapacity,
-            "Location": locationSelected
-        });
+        var body = new http_1.URLSearchParams();
+        body.set('City', selectedCity.CityName);
+        body.set('MinPrice', selectedCity.MinPrice);
+        body.set('MaxPrice', selectedCity.MaxPrice);
+        body.set('MinCapacity', selectedCity.MinCapacity);
+        body.set('MaxCapacity', selectedCity.MaxCapacity);
+        body.set('Location', locationSelected);
         var headers = new http_1.Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
         var options = new http_1.RequestOptions({ headers: headers, withCredentials: true });
         return this.http.post(this.homeInitialUrl, body, options)

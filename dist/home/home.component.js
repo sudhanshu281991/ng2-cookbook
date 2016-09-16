@@ -34,17 +34,19 @@ var HomeComponent = (function () {
         var _this = this;
         this.location = this.homeService.getLocation(citySelected);
         this.location.subscribe(function (comments) {
-            _this.getInitialHomeData(comments[0]);
+            _this.getInitialHomeData("");
         });
     };
     HomeComponent.prototype.getInitialHomeData = function (locationSelected) {
         var _this = this;
-        this.initialHomeViewData = this.homeService.getInitialHomeData(this.selectedCity, locationSelected);
-        this.initialHomeViewData.subscribe(function (comments) {
-            _this.homeViewCollection = comments.Collection;
-            _this.homeViewOccassion = comments.Occasions;
-            _this.homeViewBlog = comments.Blogs;
-        });
+        setTimeout(function () {
+            _this.initialHomeViewData = _this.homeService.getInitialHomeData(_this.selectedCity, locationSelected);
+            _this.initialHomeViewData.subscribe(function (comments) {
+                _this.homeViewCollection = comments.Collection;
+                _this.homeViewOccassion = comments.Occasions;
+                _this.homeViewBlog = comments.Blogs;
+            });
+        }, 100);
     };
     HomeComponent.prototype.getSelectedLocation = function (citySelected, index) {
         var _this = this;
@@ -52,6 +54,9 @@ var HomeComponent = (function () {
             _this.selectedCity = comments[index];
         });
         this.getLocation(citySelected);
+    };
+    HomeComponent.prototype.getSelectedLocationHomeView = function (location) {
+        this.getInitialHomeData(location);
     };
     HomeComponent = __decorate([
         core_1.Component({
