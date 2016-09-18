@@ -12,7 +12,7 @@ export class HomeOccassionComponent {
     _occassionLength: number;
     @Input('occassionlength')
     set occassionLength(occassionlength: number) {
-        this._occassionLength = occassionlength > 10 ? 10 : occassionlength;
+        this._occassionLength = occassionlength > 5 ? 5 : occassionlength;
     }
     get occassionLength() {
         return this._occassionLength;
@@ -21,7 +21,7 @@ export class HomeOccassionComponent {
         this._occassionLength = this.occassion.length;
     }
     loadLessOccassion(){
-         this._occassionLength=10;
+         this._occassionLength=5;
     }
 
 }
