@@ -10,23 +10,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+var venue_list_service_1 = require('./venue-list.service');
 var VenueListComponent = (function () {
-    function VenueListComponent(route, router) {
+    function VenueListComponent(route, router, venueListService) {
         this.route = route;
         this.router = router;
+        this.venueListService = venueListService;
     }
     VenueListComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.route.params.forEach(function (params) {
             console.log(params);
-            //let id = +params['id']; // (+) converts string 'id' to a number
-            //this.service.getHero(id).then(hero => this.hero = hero);
+            _this.getVenueList();
+        });
+    };
+    VenueListComponent.prototype.getVenueList = function () {
+        this.venueList = this.venueListService.getVenueListData();
+        this.venueList.subscribe(function (listData) {
+            console.log(listData);
         });
     };
     VenueListComponent = __decorate([
         core_1.Component({
+            providers: [venue_list_service_1.VenueListService],
             template: "Hello"
         }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router])
+        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router, venue_list_service_1.VenueListService])
     ], VenueListComponent);
     return VenueListComponent;
 }());
