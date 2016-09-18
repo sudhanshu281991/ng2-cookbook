@@ -30,16 +30,16 @@ var HomeService = (function () {
             .catch(this.handleError);
     };
     HomeService.prototype.getInitialHomeData = function (selectedCity, locationSelected) {
-        var body = new http_1.URLSearchParams();
-        body.set('City', selectedCity.CityName);
-        body.set('MinPrice', selectedCity.MinPrice);
-        body.set('MaxPrice', selectedCity.MaxPrice);
-        body.set('MinCapacity', selectedCity.MinCapacity);
-        body.set('MaxCapacity', selectedCity.MaxCapacity);
-        body.set('Location', locationSelected);
+        var homeViewParams = new http_1.URLSearchParams();
+        homeViewParams.set('City', selectedCity.CityName);
+        homeViewParams.set('MinPrice', selectedCity.MinPrice);
+        homeViewParams.set('MaxPrice', selectedCity.MaxPrice);
+        homeViewParams.set('MinCapacity', selectedCity.MinCapacity);
+        homeViewParams.set('MaxCapacity', selectedCity.MaxCapacity);
+        homeViewParams.set('Location', locationSelected = locationSelected === "All" || locationSelected === "" ? "" : locationSelected);
         var headers = new http_1.Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
         var options = new http_1.RequestOptions({ headers: headers, withCredentials: true });
-        return this.http.post(this.homeInitialUrl, body, options)
+        return this.http.post(this.homeInitialUrl, homeViewParams, options)
             .map(this.extractData)
             .catch(this.handleError);
     };

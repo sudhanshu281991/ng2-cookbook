@@ -4,22 +4,7 @@ import {Occassion} from '../model/occassion';
 @Component({
     selector: 'home-occassion',
     templateUrl: './app/home/occassion/occassion.component.html',
-    styles: [`
-      img{
-            width: 100 %;
-            height: 200px;
-        }
-            .more_occassion{
-                background-color:red;
-                color:white;
-                padding:20px;
-                height:200px;
-                margin-left:22px;
-                line-height:7;
-                font-size:20px;
-                cursor:pointer;
-            }
-            `],
+    styleUrls: ['./app/home/occassion/occassion.component.css'],
 })
 
 export class HomeOccassionComponent {

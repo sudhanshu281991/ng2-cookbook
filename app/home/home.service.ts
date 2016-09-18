@@ -5,8 +5,6 @@ import homeConstants = require('./home.constant');
 import {City} from './model/city';
 import {HomeView} from './model/home';
 
-
-
 @Injectable()
 export class HomeService {
     constructor(private http: Http) { }
@@ -25,16 +23,16 @@ export class HomeService {
             .catch(this.handleError);
     }
     getInitialHomeData(selectedCity: City, locationSelected: string): Observable<HomeView> {
-        let body:any=new URLSearchParams();
-        body.set('City', selectedCity.CityName);
-        body.set('MinPrice', selectedCity.MinPrice);
-        body.set('MaxPrice', selectedCity.MaxPrice);
-        body.set('MinCapacity', selectedCity.MinCapacity);
-        body.set('MaxCapacity', selectedCity.MaxCapacity);
-        body.set('Location', locationSelected);
+        let homeViewParams:any=new URLSearchParams();
+        homeViewParams.set('City', selectedCity.CityName);
+        homeViewParams.set('MinPrice', selectedCity.MinPrice);
+        homeViewParams.set('MaxPrice', selectedCity.MaxPrice);
+        homeViewParams.set('MinCapacity', selectedCity.MinCapacity);
+        homeViewParams.set('MaxCapacity', selectedCity.MaxCapacity);
+        homeViewParams.set('Location', locationSelected=locationSelected === "All"|| locationSelected === "" ? "" : locationSelected);
         let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
         let options = new RequestOptions({ headers: headers, withCredentials: true });
-        return this.http.post(this.homeInitialUrl, body, options)
+        return this.http.post(this.homeInitialUrl, homeViewParams, options)
             .map(this.extractData)
             .catch(this.handleError);
     }

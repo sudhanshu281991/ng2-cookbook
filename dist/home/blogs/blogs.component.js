@@ -19,8 +19,8 @@ var HomeBlogComponent = (function () {
     HomeBlogComponent = __decorate([
         core_1.Component({
             selector: 'home-blogs',
-            template: "\n    <h3 class=\"row\">\n       BLOGS\n    </h3> \n   <a  class=\"col-md-3\" *ngFor=\"let blogs of blog\">\n       <h4 class=\"col-md-12 text-center\" [innerHTML]=\"blogs.PostedBy\"></h4>\n       <span class=\"col-md-12 text-center\">{{blogs.Text}}</span>\n       <h4 class=\"col-md-12 text-center\">{{blogs.PostedOn}}</h4>\n   </a>   ",
-            styles: ["\n       a{\n           border:1px solid #efefef;\n           margin-right:10px;\n           height:250px;\n           cursor:pointer;\n       }\n   "]
+            templateUrl: './app/home/blogs/blogs.component.html',
+            styleUrls: ['./app/home/blogs/blogs.component.css']
         }), 
         __metadata('design:paramtypes', [])
     ], HomeBlogComponent);

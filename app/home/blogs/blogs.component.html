@@ -1,0 +1,8 @@
+<h3 class="row">
+    BLOGS
+</h3>
+<a class="col-md-3" *ngFor="let blogs of blog">
+    <h4 class="col-md-12 text-center" [innerHTML]="blogs.PostedBy"></h4>
+    <span class="col-md-12 text-center">{{blogs.Text}}</span>
+    <h4 class="col-md-12 text-center">{{blogs.PostedOn}}</h4>
+</a>

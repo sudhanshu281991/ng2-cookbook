@@ -19,8 +19,8 @@ var HomeCollectionComponent = (function () {
     HomeCollectionComponent = __decorate([
         core_1.Component({
             selector: 'home-collection',
-            template: "\n    <h3 class=\"row\">\n       Collection\n    </h3> \n   <div  class=\"col-md-4\" *ngFor=\"let collections of collection\">\n       <img class=\"col-md-12\" src={{collections.ImageGuid}}/>\n       <span class=\"col-md-12 text-center\">{{collections.TotalCount}}</span>\n       <h4 class=\"col-md-12 text-center\">{{collections.CollectionType}}</h4>\n   </div>   ",
-            styles: ["\n      img{\n          width:100%;\n          height:200px;\n      }\n   "]
+            templateUrl: './app/home/collection/collection.component.html',
+            styleUrls: ['./app/home/collection/collection.component.css']
         }), 
         __metadata('design:paramtypes', [])
     ], HomeCollectionComponent);

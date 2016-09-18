@@ -3,6 +3,7 @@
          <option *ngFor="let cityData of city | async">{{cityData.CityName}}</option>
     </select>
     <select (change)="getSelectedLocationHomeView($event.target.value)">
+        <option>All</option>
        <option *ngFor="let locations of location | async">{{locations}}</option>
     </select>
 </div>

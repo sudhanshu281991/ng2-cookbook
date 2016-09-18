@@ -6,12 +6,7 @@
     <span class="col-md-12 text-center">{{occassions.VenueCount}}</span>
     <h4 class="col-md-12 text-center">{{occassions.Name}}</h4>
 </div>
-<div class="col-md-4 more_occassion text-center" 
-        *ngIf="occassion.length>10 && _occassionLength!==occassion.length" 
-        [innerHTML]="occassion.length-_occassionLength + ' more occassion'" 
-        (click)="loadMoreOccassion()">
+<div class="col-md-4 more_occassion text-center" *ngIf="occassion.length > 10 && _occassionLength!==occassion.length" [innerHTML]="occassion.length-_occassionLength + ' more occassion'" (click)="loadMoreOccassion()">
 </div>
-<div class="col-md-4 more_occassion text-center" 
-        *ngIf="_occassionLength===occassion.length && occassion.length!==10" 
-        (click)="loadLessOccassion()">Less Occassion
+<div class="col-md-4 more_occassion text-center" *ngIf="_occassionLength===occassion.length && occassion.length!==10" (click)="loadLessOccassion()">Less Occassion
 </div>
