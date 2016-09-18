@@ -4,10 +4,15 @@ import {FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 import {routing, appRoutingProviders} from './app.routing';
 import {AppComponent} from './app.component';
+
+//COMPONENT FOR THE HOME VIEW
 import {HomeComponent} from './home/home.component';
 import {HomeCollectionComponent} from './home/collection/collection.component';
 import {HomeOccassionComponent} from './home/occassion/occassion.component';
 import {HomeBlogComponent} from './home/blogs/blogs.component';
+
+//COMPONET FOR THE VENUE-LIST VIEW
+import {VenueListComponent} from './venue-list/venue-list.component'
 
 
 
@@ -25,7 +30,8 @@ import {HomeBlogComponent} from './home/blogs/blogs.component';
         HomeComponent,
         HomeCollectionComponent,
         HomeOccassionComponent,
-        HomeBlogComponent
+        HomeBlogComponent,
+        VenueListComponent
     ],
     providers: [
         appRoutingProviders,

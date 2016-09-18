@@ -10,26 +10,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var HomeCollectionComponent = (function () {
-    function HomeCollectionComponent(router) {
+var VenueListComponent = (function () {
+    function VenueListComponent(route, router) {
+        this.route = route;
         this.router = router;
     }
-    HomeCollectionComponent.prototype.navigatetoVenueList = function (collectionType) {
-        this.router.navigate(['/venue-list', { option: 'collection', optionSelected: collectionType }]);
+    VenueListComponent.prototype.ngOnInit = function () {
+        this.route.params.forEach(function (params) {
+            console.log(params);
+            //let id = +params['id']; // (+) converts string 'id' to a number
+            //this.service.getHero(id).then(hero => this.hero = hero);
+        });
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Array)
-    ], HomeCollectionComponent.prototype, "collection", void 0);
-    HomeCollectionComponent = __decorate([
+    VenueListComponent = __decorate([
         core_1.Component({
-            selector: 'home-collection',
-            templateUrl: './app/home/collection/collection.component.html',
-            styleUrls: ['./app/home/collection/collection.component.css']
+            template: "Hello"
         }), 
-        __metadata('design:paramtypes', [router_1.Router])
-    ], HomeCollectionComponent);
-    return HomeCollectionComponent;
+        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router])
+    ], VenueListComponent);
+    return VenueListComponent;
 }());
-exports.HomeCollectionComponent = HomeCollectionComponent;
-//# sourceMappingURL=collection.component.js.map
+exports.VenueListComponent = VenueListComponent;
+//# sourceMappingURL=venue-list.component.js.map

@@ -1,7 +1,7 @@
 <h3 class="row">
     Occassion
 </h3>
-<div class="col-md-4" *ngFor="let occassions of occassion | slice:0:_occassionLength">
+<div class="occassion_tile col-md-4" *ngFor="let occassions of occassion | slice:0:_occassionLength" (click)="navigateToVenueList(occassions.Name)">
     <img class="col-md-12" src={{occassions.ImageUrl}}/>
     <span class="col-md-12 text-center">{{occassions.VenueCount}}</span>
     <h4 class="col-md-12 text-center">{{occassions.Name}}</h4>

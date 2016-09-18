@@ -9,8 +9,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var HomeOccassionComponent = (function () {
-    function HomeOccassionComponent() {
+    function HomeOccassionComponent(router) {
+        this.router = router;
     }
     Object.defineProperty(HomeOccassionComponent.prototype, "occassionLength", {
         get: function () {
@@ -28,6 +30,9 @@ var HomeOccassionComponent = (function () {
     HomeOccassionComponent.prototype.loadLessOccassion = function () {
         this._occassionLength = 5;
     };
+    HomeOccassionComponent.prototype.navigateToVenueList = function (occassionSelected) {
+        this.router.navigate(['/venue-list', { option: 'collection', optionSelected: occassionSelected }]);
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Array)
@@ -43,7 +48,7 @@ var HomeOccassionComponent = (function () {
             templateUrl: './app/home/occassion/occassion.component.html',
             styleUrls: ['./app/home/occassion/occassion.component.css'],
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [router_1.Router])
     ], HomeOccassionComponent);
     return HomeOccassionComponent;
 }());

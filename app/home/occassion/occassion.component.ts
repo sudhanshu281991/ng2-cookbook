@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Occassion} from '../model/occassion';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'home-occassion',
@@ -8,6 +9,7 @@ import {Occassion} from '../model/occassion';
 })
 
 export class HomeOccassionComponent {
+    constructor(private router:Router){}
     @Input() occassion: Array<Occassion>;
     _occassionLength: number;
     @Input('occassionlength')
@@ -22,6 +24,9 @@ export class HomeOccassionComponent {
     }
     loadLessOccassion(){
          this._occassionLength=5;
+    }
+    navigateToVenueList(occassionSelected:string){
+         this.router.navigate(['/venue-list', { option:'collection',optionSelected:occassionSelected }]);
     }
 
 }

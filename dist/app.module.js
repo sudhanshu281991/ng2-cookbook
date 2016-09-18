@@ -14,10 +14,13 @@ var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var app_routing_1 = require('./app.routing');
 var app_component_1 = require('./app.component');
+//COMPONENT FOR THE HOME VIEW
 var home_component_1 = require('./home/home.component');
 var collection_component_1 = require('./home/collection/collection.component');
 var occassion_component_1 = require('./home/occassion/occassion.component');
 var blogs_component_1 = require('./home/blogs/blogs.component');
+//COMPONET FOR THE VENUE-LIST VIEW
+var venue_list_component_1 = require('./venue-list/venue-list.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -36,7 +39,8 @@ var AppModule = (function () {
                 home_component_1.HomeComponent,
                 collection_component_1.HomeCollectionComponent,
                 occassion_component_1.HomeOccassionComponent,
-                blogs_component_1.HomeBlogComponent
+                blogs_component_1.HomeBlogComponent,
+                venue_list_component_1.VenueListComponent
             ],
             providers: [
                 app_routing_1.appRoutingProviders,

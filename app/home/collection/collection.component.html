@@ -1,7 +1,7 @@
 <h3 class="row">
     Collection
 </h3>
-<div class="col-md-4" *ngFor="let collections of collection">
+<div class="col-md-4" *ngFor="let collections of collection" (click)="navigatetoVenueList(collections.CollectionType)">
     <img class="col-md-12" src={{collections.ImageGuid}}/>
     <span class="col-md-12 text-center">{{collections.TotalCount}}</span>
     <h4 class="col-md-12 text-center">{{collections.CollectionType}}</h4>
