@@ -12,7 +12,10 @@ import {HomeOccassionComponent} from './home/occassion/occassion.component';
 import {HomeBlogComponent} from './home/blogs/blogs.component';
 
 //COMPONET FOR THE VENUE-LIST VIEW
-import {VenueListComponent} from './venue-list/venue-list.component'
+import {VenueListComponent} from './venue-list/venue-list.component';
+import {RatingFilterComponent} from './venue-list/filters/rating-filter.component';
+import {ListTileDataComponent} from './venue-list/list-tile/list-tile.component';
+
 
 
 
@@ -31,7 +34,9 @@ import {VenueListComponent} from './venue-list/venue-list.component'
         HomeCollectionComponent,
         HomeOccassionComponent,
         HomeBlogComponent,
-        VenueListComponent
+        VenueListComponent,
+        RatingFilterComponent,
+        ListTileDataComponent
     ],
     providers: [
         appRoutingProviders,

@@ -21,6 +21,8 @@ var occassion_component_1 = require('./home/occassion/occassion.component');
 var blogs_component_1 = require('./home/blogs/blogs.component');
 //COMPONET FOR THE VENUE-LIST VIEW
 var venue_list_component_1 = require('./venue-list/venue-list.component');
+var rating_filter_component_1 = require('./venue-list/filters/rating-filter.component');
+var list_tile_component_1 = require('./venue-list/list-tile/list-tile.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -40,7 +42,9 @@ var AppModule = (function () {
                 collection_component_1.HomeCollectionComponent,
                 occassion_component_1.HomeOccassionComponent,
                 blogs_component_1.HomeBlogComponent,
-                venue_list_component_1.VenueListComponent
+                venue_list_component_1.VenueListComponent,
+                rating_filter_component_1.RatingFilterComponent,
+                list_tile_component_1.ListTileDataComponent
             ],
             providers: [
                 app_routing_1.appRoutingProviders,
