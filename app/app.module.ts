@@ -15,6 +15,7 @@ import {HomeBlogComponent} from './home/blogs/blogs.component';
 import {VenueListComponent} from './venue-list/venue-list.component';
 import {RatingFilterComponent} from './venue-list/filters/rating-filter.component';
 import {ListTileDataComponent} from './venue-list/list-tile/list-tile.component';
+import {VenueTypeFilterComponent} from './venue-list/filters/venue-type.filter';
 
 
 
@@ -36,7 +37,8 @@ import {ListTileDataComponent} from './venue-list/list-tile/list-tile.component'
         HomeBlogComponent,
         VenueListComponent,
         RatingFilterComponent,
-        ListTileDataComponent
+        ListTileDataComponent,
+        VenueTypeFilterComponent
     ],
     providers: [
         appRoutingProviders,

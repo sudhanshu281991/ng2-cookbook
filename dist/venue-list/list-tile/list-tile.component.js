@@ -9,7 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var _ = require('underscore');
 var ListTileDataComponent = (function () {
     function ListTileDataComponent() {
     }
@@ -18,10 +17,7 @@ var ListTileDataComponent = (function () {
             return this.displayListTileData;
         },
         set: function (listTile) {
-            this.displayListTileData = _.filter(listTile, function (item) {
-                return item.Rating === 4;
-            });
-            console.log(this.displayListTileData);
+            this.displayListTileData = listTile;
         },
         enumerable: true,
         configurable: true
@@ -34,7 +30,7 @@ var ListTileDataComponent = (function () {
     ListTileDataComponent = __decorate([
         core_1.Component({
             selector: 'list-tile',
-            template: "\n      <div class=\"col-md-6\" *ngFor=\"let listTiles of displayListTileData\">\n          <img class=\"col-md-12\" src={{listTiles.Image}}>\n          <h5 class=\"col-md-12 text-center\">{{listTiles.Rating}}</h5>\n          <h6 class=\"col-md-12 text-center\">{{listTiles.Name}}</h6>\n      </div>\n    "
+            template: "\n      <div class=\"col-md-6\" *ngFor=\"let listTiles of displayListTileData\">\n          <img class=\"col-md-12\" src={{listTiles.Image}}>\n          <h5 class=\"col-md-12 text-center\">{{listTiles.Rating}}</h5>\n          <div class=\"row\">\n              <h6 class=\"col-md-4 \">{{listTiles.Name}}</h6>\n              <h6 class=\"col-md-4 \">{{listTiles.VenueType}}</h6>\n              <h6 class=\"col-md-4\">{{listTiles.SubVenueType}}</h6> \n          </div>\n      </div>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], ListTileDataComponent);

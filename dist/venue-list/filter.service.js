@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var VenueListFilterService = (function () {
     function VenueListFilterService() {
         this.ratingFilterOption = [];
+        this.venueFilterOption = [];
     }
     VenueListFilterService.prototype.getRatingFilterData = function (ratingFilter) {
         var _this = this;
@@ -23,6 +24,17 @@ var VenueListFilterService = (function () {
             _this.ratingFilterOption.push(ratingfilter);
         });
         return this.ratingFilterOption;
+    };
+    VenueListFilterService.prototype.getVenueFilterData = function (venueTypeFilter, selectedVenueType) {
+        var _this = this;
+        venueTypeFilter.forEach(function (venueType) {
+            var venueTypeFilter = {
+                "venueType": venueType,
+                "isSelected": venueType === selectedVenueType,
+            };
+            _this.venueFilterOption.push(venueTypeFilter);
+        });
+        return this.venueFilterOption;
     };
     VenueListFilterService = __decorate([
         core_1.Injectable(), 

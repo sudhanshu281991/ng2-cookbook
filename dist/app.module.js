@@ -23,6 +23,7 @@ var blogs_component_1 = require('./home/blogs/blogs.component');
 var venue_list_component_1 = require('./venue-list/venue-list.component');
 var rating_filter_component_1 = require('./venue-list/filters/rating-filter.component');
 var list_tile_component_1 = require('./venue-list/list-tile/list-tile.component');
+var venue_type_filter_1 = require('./venue-list/filters/venue-type.filter');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -44,7 +45,8 @@ var AppModule = (function () {
                 blogs_component_1.HomeBlogComponent,
                 venue_list_component_1.VenueListComponent,
                 rating_filter_component_1.RatingFilterComponent,
-                list_tile_component_1.ListTileDataComponent
+                list_tile_component_1.ListTileDataComponent,
+                venue_type_filter_1.VenueTypeFilterComponent
             ],
             providers: [
                 app_routing_1.appRoutingProviders,
