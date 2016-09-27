@@ -24,6 +24,7 @@ var venue_list_component_1 = require('./venue-list/venue-list.component');
 var rating_filter_component_1 = require('./venue-list/filters/rating-filter.component');
 var list_tile_component_1 = require('./venue-list/list-tile/list-tile.component');
 var venue_type_filter_1 = require('./venue-list/filters/venue-type.filter');
+var sorting_component_1 = require('./venue-list/list-tile/sorting.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -46,7 +47,8 @@ var AppModule = (function () {
                 venue_list_component_1.VenueListComponent,
                 rating_filter_component_1.RatingFilterComponent,
                 list_tile_component_1.ListTileDataComponent,
-                venue_type_filter_1.VenueTypeFilterComponent
+                venue_type_filter_1.VenueTypeFilterComponent,
+                sorting_component_1.SortingTileComponent
             ],
             providers: [
                 app_routing_1.appRoutingProviders,

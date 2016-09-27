@@ -4,6 +4,7 @@
         <venue-type-filter class="row" [venueTypeFilterOption]="venueTypeFilterOption" (onVenueTypeSelection)="venueTypeSelected($event)"> </venue-type-filter>
     </div>
     <div class="col-md-8">
+        <soting-option class="row" [tilesLength]="venueListTilesData.length"></soting-option>
         <list-tile class="row" [listTile]="venueListTilesData"></list-tile>
     </div>
 </div>
