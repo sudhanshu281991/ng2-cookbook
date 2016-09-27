@@ -1,5 +1,5 @@
 "use strict";
-exports.HOME_CITY_URL = 'http://test.galavenues.com/api/city';
-exports.HOME_LOCATION_URL = "http://test.galavenues.com/api/location?city=";
-exports.HOME_INITIAL_URL = "http://test.galavenues.com/api/home";
+exports.HOME_CITY_URL = './app/data/initialCity.json';
+exports.HOME_LOCATION_URL = "./app/data/loc.json";
+exports.HOME_INITIAL_URL = "./app/data/intialView.json";
 //# sourceMappingURL=home.constant.js.map

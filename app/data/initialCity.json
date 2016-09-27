@@ -1,0 +1,19 @@
+[{
+        "CityName": "ABC",
+        "VenueCount": 100,
+        "ImageUrl": "./app/image/Noimage.png",
+        "MaxCapacity": 2,
+        "MinCapacity": 0,
+        "MaxPrice": 3,
+        "MinPrice": 2
+    },
+    {
+        "CityName": "BCD",
+        "VenueCount": 148,
+        "ImageUrl": "./app/image/Noimage.png",
+        "MaxCapacity": 4,
+        "MinCapacity": 0,
+        "MaxPrice": 2,
+        "MinPrice": 1
+    }
+]

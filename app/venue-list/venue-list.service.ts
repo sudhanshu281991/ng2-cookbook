@@ -15,7 +15,10 @@ export class VenueListService {
         venueListParams.set('PageLength', 35);
         let headers = new Headers({ 'Content-type': 'application/x-www-form-urlencoded' });
         let options = new RequestOptions({ headers: headers, withCredentials: true });
-        return this.http.post(this.venueListUrl, venueListParams, options)
+        // return this.http.post(this.venueListUrl, venueListParams, options)
+        //     .map(this.extractData)
+        //     .catch(this.handleError);
+         return this.http.get(this.venueListUrl)
             .map(this.extractData)
             .catch(this.handleError);
     }

@@ -1,0 +1,98 @@
+{
+    "Filters": {
+        "Rating": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "VenueType": [
+            "Hall",
+            "Lawns",
+            "Pool",
+            "Roof",
+            "Rest",
+            "Lounge",
+            "Hotels"
+        ],
+        "Occasions": [
+
+        ],
+        "Amenities": [
+
+        ]
+    },
+    "SearchedItemDetails": [{
+            "Image": "./app/image/Noimage.png",
+            "Name": "ABC",
+            "VenueType": "Hotels",
+            "SubVenueType": "Hall",
+            "Rating": 3.0
+        },
+        {
+            "Image": "./app/image/Noimage.png",
+            "Name": "ABC",
+            "VenueType": "Hotels",
+            "SubVenueType": "Hall",
+            "Rating": 3.0
+        },
+        {
+            "Image": "./app/image/Noimage.png",
+            "Name": "ABC",
+            "VenueType": "Hotels",
+            "SubVenueType": "Hall",
+            "Rating": 3.0
+        },
+        {
+            "Image": "./app/image/Noimage.png",
+            "Name": "ABC",
+            "VenueType": "Hotels",
+            "SubVenueType": "Hall",
+            "Rating": 3.0
+        },
+        {
+            "Image": "./app/image/Noimage.png",
+            "Name": "ABC",
+            "VenueType": "Hotels",
+            "SubVenueType": "Hall",
+            "Rating": 3.0
+        },
+        {
+            "Image": "./app/image/Noimage.png",
+            "Name": "ABC",
+            "VenueType": "Hotels",
+            "SubVenueType": "Hall",
+            "Rating": 3.0
+        },
+        {
+            "Image": "./app/image/Noimage.png",
+            "Name": "ABC",
+            "VenueType": "Hotels",
+            "SubVenueType": "Hall",
+            "Rating": 3.0
+        },
+        {
+            "Image": "./app/image/Noimage.png",
+            "Name": "ABC",
+            "VenueType": "Hotels",
+            "SubVenueType": "Hall",
+            "Rating": 3.0
+        },
+        {
+            "Image": "./app/image/Noimage.png",
+            "Name": "ABC",
+            "VenueType": "Hotels",
+            "SubVenueType": "Hall",
+            "Rating": 3.0
+        },
+        {
+            "Image": "./app/image/Noimage.png",
+            "Name": "ABC",
+            "VenueType": "Hotels",
+            "SubVenueType": "Hall",
+            "Rating": 3.0
+        }
+
+    ]
+}
