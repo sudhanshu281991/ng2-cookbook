@@ -28,7 +28,7 @@ export class VenueListComponent implements OnInit {
         private venueListFilerService: VenueListFilterService,
         private listFilterService:ListFilterService) { }
     ngOnInit() {
-         this.venueListParams = this.route.snapshot.params;
+        this.venueListParams = this.route.snapshot.params;
         this.getVenueList();
     }
     getVenueList() {

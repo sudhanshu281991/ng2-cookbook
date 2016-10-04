@@ -1,2 +1,2 @@
 "use strict";
- export var VENUE_LIST_INITIAL_URL="./app/data/list.json";
+ export var VENUE_LIST_INITIAL_URL="http://test.galavenues.com/api/venues";

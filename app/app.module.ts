@@ -11,15 +11,6 @@ import {HomeCollectionComponent} from './home/collection/collection.component';
 import {HomeOccassionComponent} from './home/occassion/occassion.component';
 import {HomeBlogComponent} from './home/blogs/blogs.component';
 
-//COMPONET FOR THE VENUE-LIST VIEW
-import {VenueListComponent} from './venue-list/venue-list.component';
-import {RatingFilterComponent} from './venue-list/filters/rating-filter.component';
-import {ListTileDataComponent} from './venue-list/list-tile/list-tile.component';
-import {VenueTypeFilterComponent} from './venue-list/filters/venue-type.filter';
-import {SortingTileComponent} from './venue-list/list-tile/sorting.component';
-
-
-
 
 @NgModule({
     imports: [
@@ -36,11 +27,6 @@ import {SortingTileComponent} from './venue-list/list-tile/sorting.component';
         HomeCollectionComponent,
         HomeOccassionComponent,
         HomeBlogComponent,
-        VenueListComponent,
-        RatingFilterComponent,
-        ListTileDataComponent,
-        VenueTypeFilterComponent,
-        SortingTileComponent
     ],
     providers: [
         appRoutingProviders,

@@ -25,7 +25,7 @@ var HomeService = (function () {
             .catch(this.handleError);
     };
     HomeService.prototype.getLocation = function (cityName) {
-        return this.http.get(this.homeLocationUrl)
+        return this.http.get(this.homeLocationUrl + cityName)
             .map(this.extractData)
             .catch(this.handleError);
     };
@@ -39,10 +39,7 @@ var HomeService = (function () {
         homeViewParams.set('Location', locationSelected = locationSelected === "All" || locationSelected === "" ? "" : locationSelected);
         var headers = new http_1.Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
         var options = new http_1.RequestOptions({ headers: headers, withCredentials: true });
-        // return this.http.post(this.homeInitialUrl, homeViewParams, options)
-        //     .map(this.extractData)
-        //     .catch(this.handleError);
-        return this.http.get(this.homeInitialUrl)
+        return this.http.post(this.homeInitialUrl, homeViewParams, options)
             .map(this.extractData)
             .catch(this.handleError);
     };

@@ -18,7 +18,7 @@ export class HomeService {
             .catch(this.handleError);
     }
     getLocation(cityName: string): Observable<string[]> {
-        return this.http.get(this.homeLocationUrl)
+        return this.http.get(this.homeLocationUrl+cityName)
             .map(this.extractData)
             .catch(this.handleError);
     }
@@ -32,10 +32,7 @@ export class HomeService {
         homeViewParams.set('Location', locationSelected=locationSelected === "All"|| locationSelected === "" ? "" : locationSelected);
         let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
         let options = new RequestOptions({ headers: headers, withCredentials: true });
-        // return this.http.post(this.homeInitialUrl, homeViewParams, options)
-        //     .map(this.extractData)
-        //     .catch(this.handleError);
-         return this.http.get(this.homeInitialUrl)
+        return this.http.post(this.homeInitialUrl, homeViewParams, options)
             .map(this.extractData)
             .catch(this.handleError);
     }

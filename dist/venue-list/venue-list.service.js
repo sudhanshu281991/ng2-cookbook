@@ -25,10 +25,7 @@ var VenueListService = (function () {
         venueListParams.set('PageLength', 35);
         var headers = new http_1.Headers({ 'Content-type': 'application/x-www-form-urlencoded' });
         var options = new http_1.RequestOptions({ headers: headers, withCredentials: true });
-        // return this.http.post(this.venueListUrl, venueListParams, options)
-        //     .map(this.extractData)
-        //     .catch(this.handleError);
-        return this.http.get(this.venueListUrl)
+        return this.http.post(this.venueListUrl, venueListParams, options)
             .map(this.extractData)
             .catch(this.handleError);
     };
