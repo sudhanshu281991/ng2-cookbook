@@ -2,9 +2,10 @@ import {Component, Input} from '@angular/core';
 import {Blog} from '../model/blogs';
 
 @Component({
+     moduleId:module.id.replace("/dist/", "/app/"),
     selector: 'home-blogs',
-    templateUrl:'./app/home/blogs/blogs.component.html',
-    styleUrls: ['./app/home/blogs/blogs.component.css']
+    templateUrl:'blogs.component.html',
+    styleUrls: ['blogs.component.css']
 })
 
 export class HomeBlogComponent {

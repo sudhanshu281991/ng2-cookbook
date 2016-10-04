@@ -3,9 +3,10 @@ import {Occassion} from '../model/occassion';
 import { Router } from '@angular/router';
 
 @Component({
+     moduleId:module.id.replace("/dist/", "/app/"),
     selector: 'home-occassion',
-    templateUrl: './app/home/occassion/occassion.component.html',
-    styleUrls: ['./app/home/occassion/occassion.component.css'],
+    templateUrl: 'occassion.component.html',
+    styleUrls: ['occassion.component.css'],
 })
 
 export class HomeOccassionComponent {

@@ -18,9 +18,10 @@ var HomeBlogComponent = (function () {
     ], HomeBlogComponent.prototype, "blog", void 0);
     HomeBlogComponent = __decorate([
         core_1.Component({
+            moduleId: module.id.replace("/dist/", "/app/"),
             selector: 'home-blogs',
-            templateUrl: './app/home/blogs/blogs.component.html',
-            styleUrls: ['./app/home/blogs/blogs.component.css']
+            templateUrl: 'blogs.component.html',
+            styleUrls: ['blogs.component.css']
         }), 
         __metadata('design:paramtypes', [])
     ], HomeBlogComponent);

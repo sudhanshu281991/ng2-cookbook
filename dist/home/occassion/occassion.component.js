@@ -44,9 +44,10 @@ var HomeOccassionComponent = (function () {
     ], HomeOccassionComponent.prototype, "occassionLength", null);
     HomeOccassionComponent = __decorate([
         core_1.Component({
+            moduleId: module.id.replace("/dist/", "/app/"),
             selector: 'home-occassion',
-            templateUrl: './app/home/occassion/occassion.component.html',
-            styleUrls: ['./app/home/occassion/occassion.component.css'],
+            templateUrl: 'occassion.component.html',
+            styleUrls: ['occassion.component.css'],
         }), 
         __metadata('design:paramtypes', [router_1.Router])
     ], HomeOccassionComponent);

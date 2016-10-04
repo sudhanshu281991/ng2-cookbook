@@ -23,9 +23,10 @@ var HomeCollectionComponent = (function () {
     ], HomeCollectionComponent.prototype, "collection", void 0);
     HomeCollectionComponent = __decorate([
         core_1.Component({
+            moduleId: module.id.replace("/dist/", "/app/"),
             selector: 'home-collection',
-            templateUrl: './app/home/collection/collection.component.html',
-            styleUrls: ['./app/home/collection/collection.component.css']
+            templateUrl: 'collection.component.html',
+            styleUrls: ['collection.component.css']
         }), 
         __metadata('design:paramtypes', [router_1.Router])
     ], HomeCollectionComponent);

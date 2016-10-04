@@ -9,7 +9,8 @@ import {Blog} from './model/blogs';
 
 @Component({
     providers: [HomeService],
-    templateUrl: './app/home/home.component.html'
+     moduleId:module.id.replace("/dist/", "/app/"),
+    templateUrl: 'home.component.html'
 })
 
 export class HomeComponent implements OnInit {

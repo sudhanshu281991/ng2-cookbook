@@ -11,7 +11,8 @@ import * as _ from 'underscore';
 
 @Component({
     providers: [VenueListService, VenueListFilterService,ListFilterService],
-    templateUrl: './app/venue-list//venue-list.component.html'
+     moduleId:module.id.replace("/dist/", "/app/"),
+    templateUrl: 'venue-list.component.html'
 })
 
 export class VenueListComponent implements OnInit {

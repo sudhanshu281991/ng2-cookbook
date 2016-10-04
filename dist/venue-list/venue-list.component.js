@@ -47,7 +47,8 @@ var VenueListComponent = (function () {
     VenueListComponent = __decorate([
         core_1.Component({
             providers: [venue_list_service_1.VenueListService, filter_service_1.VenueListFilterService, list_filter_service_1.ListFilterService],
-            templateUrl: './app/venue-list//venue-list.component.html'
+            moduleId: module.id.replace("/dist/", "/app/"),
+            templateUrl: 'venue-list.component.html'
         }), 
         __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router, venue_list_service_1.VenueListService, filter_service_1.VenueListFilterService, list_filter_service_1.ListFilterService])
     ], VenueListComponent);

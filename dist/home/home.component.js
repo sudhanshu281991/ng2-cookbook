@@ -61,7 +61,8 @@ var HomeComponent = (function () {
     HomeComponent = __decorate([
         core_1.Component({
             providers: [home_service_1.HomeService],
-            templateUrl: './app/home/home.component.html'
+            moduleId: module.id.replace("/dist/", "/app/"),
+            templateUrl: 'home.component.html'
         }), 
         __metadata('design:paramtypes', [home_service_1.HomeService])
     ], HomeComponent);
