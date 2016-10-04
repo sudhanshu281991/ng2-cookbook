@@ -9,38 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var forms_1 = require('@angular/forms');
-var http_1 = require('@angular/http');
-var app_routing_1 = require('./app.routing');
-var app_component_1 = require('./app.component');
-var dashboard_module_1 = require('./dashboard/dashboard.module');
-var AppModule = (function () {
-    function AppModule() {
+var common_1 = require('@angular/common');
+var dashboard_routing_1 = require('./dashboard.routing');
+var dashboard_component_1 = require('./dashboard.component');
+var DashboardModule = (function () {
+    function DashboardModule() {
     }
-    AppModule = __decorate([
+    DashboardModule = __decorate([
         core_1.NgModule({
             imports: [
-                platform_browser_1.BrowserModule,
-                forms_1.FormsModule,
-                forms_1.ReactiveFormsModule,
-                http_1.HttpModule,
-                http_1.JsonpModule,
-                app_routing_1.routing,
-                dashboard_module_1.DashboardModule
+                dashboard_routing_1.dashboardRouting,
+                common_1.CommonModule
             ],
             declarations: [
-                app_component_1.AppComponent,
+                dashboard_component_1.DashboardComponent
             ],
             providers: [
-                app_routing_1.appRoutingProviders,
-                platform_browser_1.Title
-            ],
-            bootstrap: [app_component_1.AppComponent]
+                dashboard_routing_1.dashboardRoutingProviders
+            ]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], DashboardModule);
+    return DashboardModule;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.DashboardModule = DashboardModule;
+//# sourceMappingURL=dashboard.module.js.map

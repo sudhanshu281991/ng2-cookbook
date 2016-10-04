@@ -1,14 +1,25 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule }   from '@angular/router';
-import {HomeComponent} from './home/home.component';
+import {DashboardComponent} from './dashboard/dashboard.component'
 
 
 const appRoutes: Routes = [
-    { path: 'home', component: HomeComponent,pathMatch:'full' },
-    { path: 'venue-list', 
-      loadChildren:'app/venue-list/venue-list.module#VenueListModule'},
-    { path: '', component: HomeComponent },
-    { path: '**', component: HomeComponent }
+  {
+    path: 'home',
+    loadChildren: 'app/home/home.module#HomeModule'
+  },
+  {
+    path: 'venue-list',
+    loadChildren: 'app/venue-list/venue-list.module#VenueListModule'
+  },
+  {
+    path: '',
+    component: DashboardComponent
+  },
+  {
+    path: '**',
+    loadChildren: 'app/home/home.module#HomeModule'
+  }
 ];
 export const appRoutingProviders: any[] = [
 
