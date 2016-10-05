@@ -9,18 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var DashboardComponent = (function () {
-    function DashboardComponent() {
+var common_1 = require('@angular/common');
+var forms_routing_1 = require('./forms.routing');
+var forms_component_1 = require('./forms.component');
+var FormsModule = (function () {
+    function FormsModule() {
     }
-    DashboardComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id.replace("/dist/", "/app/"),
-            templateUrl: 'dashboard.component.html',
-            styleUrls: ['dashboard.component.css']
+    FormsModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                common_1.CommonModule,
+                forms_routing_1.formsRouting
+            ],
+            declarations: [
+                forms_component_1.FormsComponent
+            ],
+            providers: [
+                forms_routing_1.formsRoutingProviders
+            ]
         }), 
         __metadata('design:paramtypes', [])
-    ], DashboardComponent);
-    return DashboardComponent;
+    ], FormsModule);
+    return FormsModule;
 }());
-exports.DashboardComponent = DashboardComponent;
-//# sourceMappingURL=dashboard.component.js.map
+exports.FormsModule = FormsModule;
+//# sourceMappingURL=forms.module.js.map

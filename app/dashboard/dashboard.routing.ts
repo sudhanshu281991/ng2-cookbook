@@ -1,16 +1,30 @@
 import {ModuleWithProviders} from '@angular/core';
-import {Routes,RouterModule} from '@angular/router';
+import {Routes, RouterModule} from '@angular/router';
 import {DashboardComponent} from './dashboard.component';
 
-const dashboardRoutes:Routes=[
+const dashboardRoutes: Routes = [
     {
-        path:'dashboard',
-        component:DashboardComponent
+        path: 'dashboard',
+        component:DashboardComponent,
+        children: [
+            {
+                path: '',
+                redirectTo: 'dashboard/animation',
+            },
+            {
+                path: 'animation',
+                loadChildren:'app/animation/animation.module#AnimationModule'
+            },
+            {
+                path:'forms',
+                loadChildren:'app/forms/forms.module#FormsModule'
+            }
+        ]
     }
 ]
-export const dashboardRoutingProviders:any[]=[
+export const dashboardRoutingProviders: any[] = [
 
 ];
 
-export const dashboardRouting:ModuleWithProviders=RouterModule.forChild(dashboardRoutes);
+export const dashboardRouting: ModuleWithProviders = RouterModule.forChild(dashboardRoutes);
 

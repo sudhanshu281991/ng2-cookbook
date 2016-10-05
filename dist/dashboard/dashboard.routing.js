@@ -4,7 +4,21 @@ var dashboard_component_1 = require('./dashboard.component');
 var dashboardRoutes = [
     {
         path: 'dashboard',
-        component: dashboard_component_1.DashboardComponent
+        component: dashboard_component_1.DashboardComponent,
+        children: [
+            {
+                path: '',
+                redirectTo: 'dashboard/animation',
+            },
+            {
+                path: 'animation',
+                loadChildren: 'app/animation/animation.module#AnimationModule'
+            },
+            {
+                path: 'forms',
+                loadChildren: 'app/forms/forms.module#FormsModule'
+            }
+        ]
     }
 ];
 exports.dashboardRoutingProviders = [];

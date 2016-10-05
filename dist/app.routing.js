@@ -1,6 +1,5 @@
 "use strict";
 var router_1 = require('@angular/router');
-var dashboard_component_1 = require('./dashboard/dashboard.component');
 var appRoutes = [
     {
         path: 'home',
@@ -12,7 +11,8 @@ var appRoutes = [
     },
     {
         path: '',
-        component: dashboard_component_1.DashboardComponent
+        redirectTo: 'dashboard/animation',
+        pathMatch: 'full'
     },
     {
         path: '**',

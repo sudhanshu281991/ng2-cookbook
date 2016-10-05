@@ -1,0 +1,12 @@
+a{
+    height: 50px;
+    padding: 0px;
+    width:200px;
+    line-height: 3;
+    text-decoration: none;
+    border:1px solid #18bc9c;
+}
+.active{
+    background-color: #18bc9c;
+    color: white;
+}

@@ -14,8 +14,10 @@ const appRoutes: Routes = [
   },
   {
     path: '',
-    component: DashboardComponent
+    redirectTo: 'dashboard/animation',
+    pathMatch:'full'
   },
+
   {
     path: '**',
     loadChildren: 'app/home/home.module#HomeModule'

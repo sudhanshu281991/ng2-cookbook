@@ -19,7 +19,7 @@ var DashboardModule = (function () {
         core_1.NgModule({
             imports: [
                 dashboard_routing_1.dashboardRouting,
-                common_1.CommonModule
+                common_1.CommonModule,
             ],
             declarations: [
                 dashboard_component_1.DashboardComponent
