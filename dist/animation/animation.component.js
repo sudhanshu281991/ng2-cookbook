@@ -11,11 +11,73 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var AnimationComponent = (function () {
     function AnimationComponent() {
+        this.visibility = 'shown';
+        this.fadding = 'in';
+        [
+            this.users = [
+                { name: 'Sudhanshu', state: 'in_active' },
+                { name: 'Sud', state: 'in_active' },
+                { name: 'Happy', state: 'in_active' },
+                { name: 'Good', state: 'in_active' }
+            ]
+        ];
     }
+    AnimationComponent.prototype.toggleDiv = function () {
+        this.visibility = this.visibility !== 'shown' ? 'shown' : 'hidden';
+    };
+    AnimationComponent.prototype.toggleFade = function () {
+        this.fadding = this.fadding === 'in' ? 'void' : 'in';
+    };
     AnimationComponent = __decorate([
         core_1.Component({
             moduleId: module.id.replace("/dist/", "/app/"),
-            templateUrl: 'animation.component.html'
+            templateUrl: 'animation.component.html',
+            animations: [
+                core_1.trigger('visibilityChanged', [
+                    core_1.state('shown', core_1.style({
+                        opacity: 1,
+                        backgroundColor: '#eee',
+                        transform: 'scale(1)'
+                    })),
+                    core_1.state('hidden', core_1.style({
+                        opacity: 0,
+                        backgroundColor: '#cfd8dc',
+                        transform: 'scale(1.1)'
+                    })),
+                    core_1.transition('shown <=> hidden', core_1.animate('.5s ease-out')),
+                ]),
+                core_1.trigger('flyInOut', [
+                    core_1.state('in', core_1.style({ transform: 'translateX(0)' })),
+                    core_1.transition('void => *', [
+                        core_1.style({ transform: 'translateX(-100%)' }),
+                        core_1.animate(100)
+                    ]),
+                    core_1.transition('* => void', [
+                        core_1.animate(100, core_1.style({ transform: 'translateX(-100%)' }))
+                    ])
+                ]),
+                core_1.trigger('heroState', [
+                    core_1.state('in_active', core_1.style({ transform: 'translateX(0) scale(1)' })),
+                    core_1.state('a_ctive', core_1.style({ transform: 'translateX(0) scale(1.1)' })),
+                    core_1.transition('in_active => a_ctive', core_1.animate('100ms ease-in')),
+                    core_1.transition('a_ctive => in_active', core_1.animate('100ms ease-out')),
+                    core_1.transition('void => in_active', [
+                        core_1.style({ transform: 'translateX(-100%) scale(1)' }),
+                        core_1.animate(100)
+                    ]),
+                    core_1.transition('in_active => void', [
+                        core_1.animate(100, core_1.style({ transform: 'translateX(100%) scale(1)' }))
+                    ]),
+                    core_1.transition('void => a_ctive', [
+                        core_1.style({ transform: 'translateX(0) scale(0)' }),
+                        core_1.animate(200)
+                    ]),
+                    core_1.transition('a_ctive => void', [
+                        core_1.animate(200, core_1.style({ transform: 'translateX(0) scale(0)' }))
+                    ])
+                ])
+            ],
+            styles: ["\n       .row{\n           padding:10px;\n       }\n       button{\n           margin-top:20px;\n       }\n       .fading-elm{\n           background-color:#efefef;\n           padding:10px;\n       }\n    "]
         }), 
         __metadata('design:paramtypes', [])
     ], AnimationComponent);

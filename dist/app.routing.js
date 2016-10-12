@@ -3,7 +3,7 @@ var router_1 = require('@angular/router');
 var appRoutes = [
     {
         path: 'home',
-        loadChildren: 'app/home/home.module#HomeModule'
+        loadChildren: 'app/home/home.module#HomeModule',
     },
     {
         path: 'venue-list',

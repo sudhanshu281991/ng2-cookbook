@@ -1,1 +1,22 @@
-<h1>Animation Tutorials</h1>
+<h1 class="row">Animation Tutorials</h1>
+
+<h3 class="row">Example 1</h3>
+<div class="row" [@visibilityChanged]="visibility" >
+  <div>Hello Thomas</div>
+   Can you see me?
+</div>
+<button (click)="toggleDiv()">Toggle</button>
+
+<h3 class="row">Example 2:Use of void for the animation</h3>
+<h6 class="row">State "void" applies when the element is not added to the view or it has been removed from the view<br>
+ It is very useful in the case of the leave and enter transition</h6>
+
+ <div class="row" [@flyInOut]="fadding">
+     <div class="fading-elm">Windstrom</div>
+ </div>
+ <button (click)="toggleFade()">Toggle</button>
+
+
+ <h3 class="row">Example 3:Use of void for the animation and entering  and leaving from different state</h3>
+
+<h5 *ngFor="let user of users" [@heroState]="user.state">{{user.name}}</h5>
