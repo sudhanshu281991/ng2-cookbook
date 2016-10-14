@@ -5,7 +5,7 @@ import {DashboardComponent} from './dashboard.component';
 const dashboardRoutes: Routes = [
     {
         path: 'dashboard',
-        component:DashboardComponent,
+        component: DashboardComponent,
         children: [
             {
                 path: '',
@@ -13,11 +13,15 @@ const dashboardRoutes: Routes = [
             },
             {
                 path: 'animation',
-                loadChildren:'app/animation/animation.module#AnimationModule'
+                loadChildren: 'app/animation/animation.module#AnimationModule'
             },
             {
-                path:'forms',
-                loadChildren:'app/forms/forms.module#FormsModule'
+                path: 'forms',
+                loadChildren: 'app/forms/forms.module#FormsModule'
+            },
+            {
+                path: 'pipes',
+                loadChildren: 'app/pipes/pipes.module#PipesModule'
             }
         ]
     }

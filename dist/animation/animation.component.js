@@ -47,20 +47,36 @@ var AnimationComponent = (function () {
                     core_1.transition('shown <=> hidden', core_1.animate('.5s ease-out')),
                 ]),
                 core_1.trigger('flyInOut', [
-                    core_1.state('in', core_1.style({ transform: 'translateX(0)' })),
+                    core_1.state('in', core_1.style({ width: 120, transform: 'translateX(0)', opacity: 1 })),
                     core_1.transition('void => *', [
-                        core_1.style({ transform: 'translateX(-100%)' }),
-                        core_1.animate(100)
+                        core_1.style({ width: 10, transform: 'translateX(50px)', opacity: 0 }),
+                        core_1.group([
+                            core_1.animate('0.3s 0.1s ease', core_1.style({
+                                transform: 'translateX(0)',
+                                width: 120
+                            })),
+                            core_1.animate('0.3s ease', core_1.style({
+                                opacity: 1
+                            }))
+                        ])
                     ]),
                     core_1.transition('* => void', [
-                        core_1.animate(100, core_1.style({ transform: 'translateX(-100%)' }))
+                        core_1.group([
+                            core_1.animate('0.3s ease', core_1.style({
+                                transform: 'translateX(50px)',
+                                width: 10
+                            })),
+                            core_1.animate('0.3s 0.2s ease', core_1.style({
+                                opacity: 0
+                            }))
+                        ])
                     ])
                 ]),
                 core_1.trigger('heroState', [
                     core_1.state('in_active', core_1.style({ transform: 'translateX(0) scale(1)' })),
                     core_1.state('a_ctive', core_1.style({ transform: 'translateX(0) scale(1.1)' })),
-                    core_1.transition('in_active => a_ctive', core_1.animate('100ms ease-in')),
-                    core_1.transition('a_ctive => in_active', core_1.animate('100ms ease-out')),
+                    core_1.transition('in_active => a_ctive', core_1.animate('500ms ease-in')),
+                    core_1.transition('a_ctive => in_active', core_1.animate('500ms ease-out')),
                     core_1.transition('void => in_active', [
                         core_1.style({ transform: 'translateX(-100%) scale(1)' }),
                         core_1.animate(100)
@@ -77,7 +93,7 @@ var AnimationComponent = (function () {
                     ])
                 ])
             ],
-            styles: ["\n       .row{\n           padding:10px;\n       }\n       button{\n           margin-top:20px;\n       }\n       .fading-elm{\n           background-color:#efefef;\n           padding:10px;\n       }\n    "]
+            styles: ["\n       .row{\n           padding:10px;\n       }\n       button{\n           margin-top:20px;\n       }\n       .fading-elm{\n           background-color:#efefef;\n           padding:10px;\n           width:auto;\n       }\n    "]
         }), 
         __metadata('design:paramtypes', [])
     ], AnimationComponent);

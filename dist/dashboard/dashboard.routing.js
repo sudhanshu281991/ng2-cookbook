@@ -17,6 +17,10 @@ var dashboardRoutes = [
             {
                 path: 'forms',
                 loadChildren: 'app/forms/forms.module#FormsModule'
+            },
+            {
+                path: 'pipes',
+                loadChildren: 'app/pipes/pipes.module#PipesModule'
             }
         ]
     }

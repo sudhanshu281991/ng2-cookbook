@@ -11,8 +11,8 @@
 <h6 class="row">State "void" applies when the element is not added to the view or it has been removed from the view<br>
  It is very useful in the case of the leave and enter transition</h6>
 
- <div class="row" [@flyInOut]="fadding">
-     <div class="fading-elm">Windstrom</div>
+ <div class="row" [@flyInOut]="fadding" *ngIf="fadding==='in'">
+     <div class="col-xs-5 fading-elm">Windstrom</div>
  </div>
  <button (click)="toggleFade()">Toggle</button>
 
