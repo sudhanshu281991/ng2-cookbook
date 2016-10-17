@@ -1,0 +1,28 @@
+<h4 class="col-xs-12">Forms Control Demo</h4>
+<form #f="ngForm" novalidate>
+    <div>
+        <label>Name</label>
+        <input type="text" name="name" [(ngModel)]="user.name">
+    </div>
+     <div>
+        <label>Age</label>
+        <input type="number" name="age" [(ngModel)]="user.age">
+    </div>
+    <div>
+        <label>Gender</label>
+        <div *ngFor="let gender of genders">
+            <label>
+                <input type="radio" name="gender" [(ngModel)]="user.gender" [value]="gender.value">
+                   {{gender.display}}
+            </label>
+        </div>
+    </div>
+    <div>
+        <label>Role</label>
+        <select name="role" [(ngModel)]="user.role">
+            <option *ngFor="let role of roles" [value]="role.value">{{role.display}}</option>
+        </select>
+    </div>
+
+    <button class="btn btn-success" type="submit" (click)="save(f.value,f.valid)">Submit</button>
+</form>

@@ -8,7 +8,7 @@ import {Component} from '@angular/core';
              (keyup.enter)="addHero(box.value,canFly);box.value='';"
              placeholder="Name">
       <input type "checkbox"  name="Can fly">       
-      <div *ngFor="let hero of heroes">{{hero.name}}</div>       
+      <div *ngFor="let hero of heroes">;{{hero.name}}</div>       
     `
 })
 

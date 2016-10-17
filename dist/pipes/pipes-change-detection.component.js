@@ -27,7 +27,7 @@ var PipesChangeDetection = (function () {
     PipesChangeDetection = __decorate([
         core_1.Component({
             selector: 'change-detection',
-            template: "\n      <h4 class=\"row\">Pipes and change detection</h4>\n      <input type=\"text\" #box\n             (keyup.enter)=\"addHero(box.value,canFly);box.value='';\"\n             placeholder=\"Name\">\n      <input type \"checkbox\"  name=\"Can fly\">       \n      <div *ngFor=\"let hero of heroes\">{{hero.name}}</div>       \n    "
+            template: "\n      <h4 class=\"row\">Pipes and change detection</h4>\n      <input type=\"text\" #box\n             (keyup.enter)=\"addHero(box.value,canFly);box.value='';\"\n             placeholder=\"Name\">\n      <input type \"checkbox\"  name=\"Can fly\">       \n      <div *ngFor=\"let hero of heroes\">;{{hero.name}}</div>       \n    "
         }), 
         __metadata('design:paramtypes', [])
     ], PipesChangeDetection);

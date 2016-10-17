@@ -12,25 +12,29 @@ var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
 var forms_routing_1 = require('./forms.routing');
 var forms_component_1 = require('./forms.component');
-var FormsModule = (function () {
-    function FormsModule() {
+var forms_1 = require('@angular/forms');
+var forms_controls_component_1 = require('./forms-control/forms-controls.component');
+var FormModule = (function () {
+    function FormModule() {
     }
-    FormsModule = __decorate([
+    FormModule = __decorate([
         core_1.NgModule({
             imports: [
                 common_1.CommonModule,
-                forms_routing_1.formsRouting
+                forms_routing_1.formsRouting,
+                forms_1.FormsModule
             ],
             declarations: [
-                forms_component_1.FormsComponent
+                forms_component_1.FormsComponent,
+                forms_controls_component_1.FormsControlComponent
             ],
             providers: [
                 forms_routing_1.formsRoutingProviders
             ]
         }), 
         __metadata('design:paramtypes', [])
-    ], FormsModule);
-    return FormsModule;
+    ], FormModule);
+    return FormModule;
 }());
-exports.FormsModule = FormsModule;
+exports.FormModule = FormModule;
 //# sourceMappingURL=forms.module.js.map
