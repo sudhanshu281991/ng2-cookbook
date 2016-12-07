@@ -1,0 +1,46 @@
+<h4 class="row sub-heading">Reactive Forms</h4>
+
+<form [formGroup]="registerForm" (ngSubmit)="submitForm(registerForm.value)">
+    <div class="field col-xs-6 form-group" [ngClass]="{'has-error':!registerForm.controls['firstName'].valid && registerForm.controls['firstName'].dirty} ">
+        <label class="col-xs-4">First Name : </label>
+        <input class="col-xs-8 form-control" type="text" formControlName="firstName">
+        <div *ngIf="registerForm.controls['firstName'].hasError('required') && 
+                     registerForm.controls['firstName'].dirty" class="alert alert-danger col-xs-12">
+            You must include a first name.</div>
+    </div>
+    <div class="field col-xs-6 form-group" [ngClass]="{'has-error':!registerForm.controls['lastName'].valid && registerForm.controls['lastName'].dirty}">
+        <label class="col-xs-4">Last Name :</label>
+        <input class="col-xs-8 form-control" type="text" formControlName="lastName">
+        <div *ngIf="registerForm.controls['lastName'].hasError('required') && 
+                    registerForm.controls['lastName'].dirty" class="alert alert-danger col-xs-12">
+            You must enter last name</div>
+    </div>
+    <div class="field col-xs-6 form-group" [ngClass]="{'has-error':!registerForm.controls['emailId'].valid && registerForm.controls['emailId'].dirty}">
+        <label class="col-xs-4">Email ID :</label>
+        <input class="col-xs-8 form-control" type="email" formControlName="emailId">
+        <div *ngIf="registerForm.controls['emailId'].hasError('required') && 
+                    registerForm.controls['emailId'].dirty" class="alert alert-danger col-xs-12">Please enter the Email Id </div>
+    </div>
+    <div class="field col-xs-6 form-group" [ngClass]="{'has-error':!registerForm.controls['mblNo'].valid && registerForm.controls['mblNo'].dirty}">
+        <label class="col-xs-4">Mobile No :</label>
+        <input class="col-xs-8 form-control" type="text" formControlName="mblNo">
+        <div *ngIf="registerForm.controls['mblNo'].hasError('required') && 
+                      registerForm.controls['mblNo'].dirty" class="alert alert-danger col-xs-12">Please enter your mobile no.</div>
+        <div *ngIf="(registerForm.controls['mblNo'].hasError('minlength') || registerForm.controls['mblNo'].hasError('maxlength') ) && 
+                      registerForm.controls['mblNo'].dirty" class="alert alert-danger col-xs-12">
+            Mobile number should be 10 digits.</div>
+    </div>
+    <fieldset class="col-xs-12 no-padding" formGroupName="addressDetails">
+        <div class="field col-xs-6 form-group" [ngClass]="{'has-error':!registerForm.controls['addressDetails'].controls['address'].valid && 
+                                      registerForm.controls['addressDetails'].controls['address'].dirty}">
+            <label class="col-xs-4 ">Address :</label>
+            <input class="col-xs-8 form-control" type="text" formControlName="address">
+        </div>
+        <div class="field col-xs-6 form-group" [ngClass]="{'has-error':!registerForm.controls['addressDetails'].controls['state'].valid && 
+                                      registerForm.controls['addressDetails'].controls['state'].dirty}">
+            <label class="col-xs-4">State:</label>
+            <input class="col-xs-8 form-control" type="text" formControlName="state">
+        </div>
+    </fieldset>
+    <button class="btn btn-success row" type="submit" [disabled]="!registerForm.valid">Submit</button>
+</form>

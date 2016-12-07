@@ -9,25 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var FormsControlComponent = (function () {
-    function FormsControlComponent() {
-        this.firstname = "Sudhanshu";
+var AttributeDirectiveComponent = (function () {
+    function AttributeDirectiveComponent() {
     }
-    FormsControlComponent.prototype.onSubmit = function (form) {
-        console.log("the form value is:", form);
-    };
-    FormsControlComponent = __decorate([
+    AttributeDirectiveComponent = __decorate([
         core_1.Component({
+            selector: 'attirbute-directive',
             moduleId: module.id.replace("/dist/", "/app/"),
-            selector: 'forms-controls',
-            templateUrl: 'forms-controls.component.html',
-            styles: [
-                "\n          .btn-success{\n              margin-top:10px;\n          }\n          .form-control{\n              margin-bottom:20px;\n          }\n         "
-            ]
+            templateUrl: 'attribute-directive.component.html',
+            styles: ["\n      .row{\n          margin:0px!important;\n          padding-top:30px;\n        }\n    "]
         }), 
         __metadata('design:paramtypes', [])
-    ], FormsControlComponent);
-    return FormsControlComponent;
+    ], AttributeDirectiveComponent);
+    return AttributeDirectiveComponent;
 }());
-exports.FormsControlComponent = FormsControlComponent;
-//# sourceMappingURL=forms-controls.component.js.map
+exports.AttributeDirectiveComponent = AttributeDirectiveComponent;
+//# sourceMappingURL=attribute-directive.component.js.map

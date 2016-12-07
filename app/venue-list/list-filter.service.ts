@@ -1,26 +1,61 @@
+
 import {Injectable} from '@angular/core';
 import {RatingFilterOption} from './model/rating-filter';
 import {VenueTypeFilterOption} from './model/venue-type.filter';
 import {VenueListTiles} from './model/list-tiles';
+/**
+ * 
+ * 
+ * @export
+ * @class ListFilterService
+ */
 @Injectable()
+
 export class ListFilterService {
     ratingFilterOption: Array<RatingFilterOption> = [];
     venueFilterOption: Array<VenueTypeFilterOption> = [];
     ratingTilesData: Array<VenueListTiles> = [];
     venueTilesData: Array<VenueListTiles> = [];
     filterTiles: Array<VenueListTiles> = [];
+    /**
+     * 
+     * 
+     * @param {Array<VenueListTiles>} selectedTilesData
+     * @param {any} event
+     * @returns
+     * 
+     * @memberOf ListFilterService
+     */
     getRatingFilterTiles(selectedTilesData: Array<VenueListTiles>, event) {
         this.ratingTilesData = event.length > 0 ? [] : selectedTilesData;
         this.ratingFilterOption = event;
         this.getSelectedTiles(selectedTilesData);
         return this.filterTiles;
     }
+
+    /**
+     * 
+     * 
+     * @param {Array<VenueListTiles>} selectedTilesData
+     * @param {any} event
+     * @returns
+     * 
+     * @memberOf ListFilterService
+     */
     getVenueFilterTiles(selectedTilesData: Array<VenueListTiles>, event) {
         this.venueTilesData = event.length > 0 ? [] : selectedTilesData;
         this.venueFilterOption = event;
         this.getSelectedTiles(selectedTilesData);
         return this.filterTiles;
     }
+    
+    /**
+     * 
+     * 
+     * @param {Array<VenueListTiles>} selectedTilesData
+     * 
+     * @memberOf ListFilterService
+     */
     getSelectedTiles(selectedTilesData: Array<VenueListTiles>) {
         this.ratingFilterOption.forEach(ratingData => {
             let Ratingtiles = _.filter(selectedTilesData, function (item) {
@@ -28,6 +63,7 @@ export class ListFilterService {
             });
             this.ratingTilesData = _.union(this.ratingTilesData, Ratingtiles);
         });
+        
         this.ratingTilesData = this.ratingTilesData.length > 0 ? this.ratingTilesData : selectedTilesData;
         this.venueFilterOption.forEach(venueTypeData => {
             let VenueTypetiles = _.filter(selectedTilesData, function (item) {

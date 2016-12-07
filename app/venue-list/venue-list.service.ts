@@ -3,10 +3,24 @@ import {Http, Response, Headers, RequestOptions, URLSearchParams} from '@angular
 import {Observable} from 'rxjs/observable';
 import venueListConstants=require('./venue-list.constants');
 
+/**
+ * 
+ * 
+ * @export
+ * @class VenueListService
+ */
 @Injectable()
 export class VenueListService {
     constructor(private http: Http) { }
      private venueListUrl=venueListConstants.VENUE_LIST_INITIAL_URL;
+     
+    /**
+     * 
+     * 
+     * @returns {Observable<any>}
+     * 
+     * @memberOf VenueListService
+     */
     getVenueListData(): Observable<any> {
         let venueListParams: any = new URLSearchParams();
         venueListParams.set('City', 'Mumbai');
@@ -19,10 +33,30 @@ export class VenueListService {
             .map(this.extractData)
             .catch(this.handleError);
     }
+    
+    /**
+     * 
+     * 
+     * @private
+     * @param {Response} res
+     * @returns
+     * 
+     * @memberOf VenueListService
+     */
     private extractData(res: Response) {
         let body = res.json();
         return body || {};
     }
+    
+    /**
+     * 
+     * 
+     * @private
+     * @param {*} error
+     * @returns
+     * 
+     * @memberOf VenueListService
+     */
     private handleError(error: any) {
         let errMsg = (error.message) ? error.message : error.status ? `${error.status} - ${error.statusText}` : 'Server error';
         return Observable.throw(errMsg);

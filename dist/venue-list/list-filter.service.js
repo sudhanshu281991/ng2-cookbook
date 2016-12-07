@@ -9,6 +9,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+/**
+ *
+ *
+ * @export
+ * @class ListFilterService
+ */
 var ListFilterService = (function () {
     function ListFilterService() {
         this.ratingFilterOption = [];
@@ -17,18 +23,43 @@ var ListFilterService = (function () {
         this.venueTilesData = [];
         this.filterTiles = [];
     }
+    /**
+     *
+     *
+     * @param {Array<VenueListTiles>} selectedTilesData
+     * @param {any} event
+     * @returns
+     *
+     * @memberOf ListFilterService
+     */
     ListFilterService.prototype.getRatingFilterTiles = function (selectedTilesData, event) {
         this.ratingTilesData = event.length > 0 ? [] : selectedTilesData;
         this.ratingFilterOption = event;
         this.getSelectedTiles(selectedTilesData);
         return this.filterTiles;
     };
+    /**
+     *
+     *
+     * @param {Array<VenueListTiles>} selectedTilesData
+     * @param {any} event
+     * @returns
+     *
+     * @memberOf ListFilterService
+     */
     ListFilterService.prototype.getVenueFilterTiles = function (selectedTilesData, event) {
         this.venueTilesData = event.length > 0 ? [] : selectedTilesData;
         this.venueFilterOption = event;
         this.getSelectedTiles(selectedTilesData);
         return this.filterTiles;
     };
+    /**
+     *
+     *
+     * @param {Array<VenueListTiles>} selectedTilesData
+     *
+     * @memberOf ListFilterService
+     */
     ListFilterService.prototype.getSelectedTiles = function (selectedTilesData) {
         var _this = this;
         this.ratingFilterOption.forEach(function (ratingData) {

@@ -13,7 +13,25 @@ var router_1 = require('@angular/router');
 var venue_list_service_1 = require('./venue-list.service');
 var filter_service_1 = require('./filter.service');
 var list_filter_service_1 = require('./list-filter.service');
+/**
+ *
+ *
+ * @export
+ * @class VenueListComponent
+ * @implements {OnInit}
+ */
 var VenueListComponent = (function () {
+    /**
+     * Creates an instance of VenueListComponent.
+     *
+     * @param {ActivatedRoute} route
+     * @param {Router} router
+     * @param {VenueListService} venueListService
+     * @param {VenueListFilterService} venueListFilerService
+     * @param {ListFilterService} listFilterService
+     *
+     * @memberOf VenueListComponent
+     */
     function VenueListComponent(route, router, venueListService, venueListFilerService, listFilterService) {
         this.route = route;
         this.router = router;

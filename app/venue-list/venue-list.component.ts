@@ -1,3 +1,4 @@
+
 import {Component, OnInit} from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
@@ -9,6 +10,13 @@ import {VenueListTiles} from './model/list-tiles';
 import {ListFilterService} from './list-filter.service'
 import * as _ from 'underscore';
 
+/**
+ * 
+ * 
+ * @export
+ * @class VenueListComponent
+ * @implements {OnInit}
+ */
 @Component({
     providers: [VenueListService, VenueListFilterService,ListFilterService],
      moduleId:module.id.replace("/dist/", "/app/"),
@@ -24,14 +32,28 @@ export class VenueListComponent implements OnInit {
     selectedTilesData: Array<VenueListTiles>;
     venueListParams: any;
     tiles: any;
+    
+    /**
+     * Creates an instance of VenueListComponent.
+     * 
+     * @param {ActivatedRoute} route
+     * @param {Router} router
+     * @param {VenueListService} venueListService
+     * @param {VenueListFilterService} venueListFilerService
+     * @param {ListFilterService} listFilterService
+     * 
+     * @memberOf VenueListComponent
+     */
     constructor(private route: ActivatedRoute, private router: Router,
         private venueListService: VenueListService,
         private venueListFilerService: VenueListFilterService,
         private listFilterService:ListFilterService) { }
+        
     ngOnInit() {
         this.venueListParams = this.route.snapshot.params;
         this.getVenueList();
     }
+    
     getVenueList() {
         this.venueList = this.venueListService.getVenueListData();
         this.venueList.subscribe(listData => {
@@ -43,6 +65,7 @@ export class VenueListComponent implements OnInit {
             });
         })
     }
+    
     ratingSelected(event) {
         this.venueListTilesData=this.listFilterService.getRatingFilterTiles(this.selectedTilesData,event);
     }

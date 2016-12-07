@@ -16,6 +16,12 @@ var list_tile_component_1 = require('./list-tile/list-tile.component');
 var venue_type_filter_1 = require('./filters/venue-type.filter');
 var sorting_component_1 = require('./list-tile/sorting.component');
 var venue_list_routing_1 = require('./venue-list.routing');
+/**
+ *
+ *
+ * @export
+ * @class VenueListModule
+ */
 var VenueListModule = (function () {
     function VenueListModule() {
     }

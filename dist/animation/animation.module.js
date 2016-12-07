@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
 var animation_routing_1 = require('./animation.routing');
 var animation_component_1 = require('./animation.component');
+var attribute_directive_component_1 = require('../attribute-directive/attribute-directive.component');
 var AnimationModule = (function () {
     function AnimationModule() {
     }
@@ -22,7 +23,8 @@ var AnimationModule = (function () {
                 animation_routing_1.animationRouting
             ],
             declarations: [
-                animation_component_1.AnimationComponent
+                animation_component_1.AnimationComponent,
+                attribute_directive_component_1.AttributeDirectiveComponent
             ],
             providers: [
                 animation_routing_1.animationRoutingProviders

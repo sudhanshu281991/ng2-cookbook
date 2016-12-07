@@ -7,6 +7,12 @@ import {VenueTypeFilterComponent} from './filters/venue-type.filter';
 import {SortingTileComponent} from './list-tile/sorting.component';
 import {venueListRouting, venueListRoutingProviders} from './venue-list.routing'
 
+/**
+ * 
+ * 
+ * @export
+ * @class VenueListModule
+ */
 @NgModule({
     imports: [
         venueListRouting,

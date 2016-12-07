@@ -12,11 +12,24 @@ var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 var observable_1 = require('rxjs/observable');
 var venueListConstants = require('./venue-list.constants');
+/**
+ *
+ *
+ * @export
+ * @class VenueListService
+ */
 var VenueListService = (function () {
     function VenueListService(http) {
         this.http = http;
         this.venueListUrl = venueListConstants.VENUE_LIST_INITIAL_URL;
     }
+    /**
+     *
+     *
+     * @returns {Observable<any>}
+     *
+     * @memberOf VenueListService
+     */
     VenueListService.prototype.getVenueListData = function () {
         var venueListParams = new http_1.URLSearchParams();
         venueListParams.set('City', 'Mumbai');
@@ -29,10 +42,28 @@ var VenueListService = (function () {
             .map(this.extractData)
             .catch(this.handleError);
     };
+    /**
+     *
+     *
+     * @private
+     * @param {Response} res
+     * @returns
+     *
+     * @memberOf VenueListService
+     */
     VenueListService.prototype.extractData = function (res) {
         var body = res.json();
         return body || {};
     };
+    /**
+     *
+     *
+     * @private
+     * @param {*} error
+     * @returns
+     *
+     * @memberOf VenueListService
+     */
     VenueListService.prototype.handleError = function (error) {
         var errMsg = (error.message) ? error.message : error.status ? error.status + " - " + error.statusText : 'Server error';
         return observable_1.Observable.throw(errMsg);

@@ -14,6 +14,7 @@ var forms_routing_1 = require('./forms.routing');
 var forms_component_1 = require('./forms.component');
 var forms_1 = require('@angular/forms');
 var forms_controls_component_1 = require('./forms-control/forms-controls.component');
+var reactive_forms_component_1 = require('./reactive-forms/reactive.forms.component');
 var FormModule = (function () {
     function FormModule() {
     }
@@ -22,11 +23,13 @@ var FormModule = (function () {
             imports: [
                 common_1.CommonModule,
                 forms_routing_1.formsRouting,
-                forms_1.FormsModule
+                forms_1.FormsModule,
+                forms_1.ReactiveFormsModule
             ],
             declarations: [
                 forms_component_1.FormsComponent,
-                forms_controls_component_1.FormsControlComponent
+                forms_controls_component_1.FormsControlComponent,
+                reactive_forms_component_1.ReactiveFormsComponent
             ],
             providers: [
                 forms_routing_1.formsRoutingProviders

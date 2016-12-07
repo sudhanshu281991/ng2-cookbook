@@ -1,28 +1,38 @@
-<h4 class="col-xs-12">Forms Control Demo</h4>
-<form #f="ngForm" novalidate>
-    <div>
-        <label>Name</label>
-        <input type="text" name="name" [(ngModel)]="user.name">
-    </div>
-     <div>
-        <label>Age</label>
-        <input type="number" name="age" [(ngModel)]="user.age">
-    </div>
-    <div>
-        <label>Gender</label>
-        <div *ngFor="let gender of genders">
-            <label>
-                <input type="radio" name="gender" [(ngModel)]="user.gender" [value]="gender.value">
-                   {{gender.display}}
-            </label>
+<h4 class="row">Demo Form:Template Driven Form</h4>
+<form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+    <fieldset ngModelGroup="name">
+        <div class="field col-xs-6">
+            <label class="col-xs-4" for="fName">First Name</label>
+            <input class="col-xs-8 form-control" type="text" placeholder="First Name" name="fName" [(ngModel)]="firstname">
+            <p class="col-xs-12">You have entered:{{firstname}}</p>
         </div>
+        <div class="field col-xs-6">
+            <label class="col-xs-4" for="lName">Last Name</label>
+            <input class="col-xs-8 form-control" type="text" placeholder="Last Name" name="lName" ngModel>
+        </div>
+    </fieldset>
+    <div class="field col-xs-6">
+        <label class="col-xs-4" for="mblNo">Mobile No</label>
+        <input class="col-xs-8 form-control" type="text" placeholder="mobile Number" name="mblNumber" ngModel>
     </div>
-    <div>
-        <label>Role</label>
-        <select name="role" [(ngModel)]="user.role">
-            <option *ngFor="let role of roles" [value]="role.value">{{role.display}}</option>
-        </select>
-    </div>
+     <div class="field col-xs-6">
+            <label class="col-xs-4" for="emailId">emailId</label>
+            <input class="col-xs-8 form-control" type="text" placeholder="Email Id" name="emailId" ngModel>
+        </div>
+    <fieldset class="col-md-12" ngModelGroup="address">
+        <div class="field col-xs-6">
+            <label class="col-xs-4" for="street">Street</label>
+            <input class="col-xs-8 form-control" type="text" placeholder="Street" name="street" ngModel>
+        </div>
+        <div class="field col-xs-6">
+            <label class="col-xs-4" for="zip">ZIP</label>
+            <input class="col-xs-8 form-control" type="text" placeholder="ZIP" name="zip" ngModel>
+        </div>
+        <div class="field col-xs-6">
+            <label class="col-xs-4" for="city">City</label>
+            <input class="col-xs-8 form-control" type="text" placeholder="City" name="city" ngModel>
+        </div>
+    </fieldset>
 
-    <button class="btn btn-success" type="submit" (click)="save(f.value,f.valid)">Submit</button>
+    <button class="btn btn-success row" type="submit">Submit</button>
 </form>
