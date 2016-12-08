@@ -3,6 +3,8 @@ import {CommonModule} from '@angular/common';
 import {animationRouting, animationRoutingProviders} from './animation.routing';
 import {AnimationComponent} from './animation.component';
 import {AttributeDirectiveComponent} from '../attribute-directive/attribute-directive.component';
+import {HighlightDirective} from '../attribute-directive/highlight.directive';
+import {StructuralDirectiveComponent} from '../structural-directive/structural-directive.component';
 
 
 @NgModule({
@@ -12,7 +14,9 @@ import {AttributeDirectiveComponent} from '../attribute-directive/attribute-dire
     ],
     declarations: [
         AnimationComponent,
-        AttributeDirectiveComponent
+        AttributeDirectiveComponent,
+        HighlightDirective,
+        StructuralDirectiveComponent
     ],
     providers: [
         animationRoutingProviders

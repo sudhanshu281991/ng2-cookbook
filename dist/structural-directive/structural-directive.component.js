@@ -9,19 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AttributeDirectiveComponent = (function () {
-    function AttributeDirectiveComponent() {
+var StructuralDirectiveComponent = (function () {
+    function StructuralDirectiveComponent() {
+        [
+            this.users = [
+                { name: 'Sudhanshu', state: 'in_active' },
+                { name: 'Sud', state: 'in_active' },
+                { name: 'Happy', state: 'in_active' },
+                { name: 'Good', state: 'in_active' }
+            ]
+        ];
     }
-    AttributeDirectiveComponent = __decorate([
+    StructuralDirectiveComponent = __decorate([
         core_1.Component({
-            selector: 'attirbute-directive',
+            selector: 'structural-directive',
             moduleId: module.id.replace("/dist/", "/app/"),
-            templateUrl: 'attribute-directive.component.html',
-            styles: ["\n      .row{\n          margin:0px!important;\n          padding-top:30px;\n        }\n        p{\n            margin-top:10px;\n            padding:10px;\n        }\n    "]
+            templateUrl: 'structural-directive.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], AttributeDirectiveComponent);
-    return AttributeDirectiveComponent;
+    ], StructuralDirectiveComponent);
+    return StructuralDirectiveComponent;
 }());
-exports.AttributeDirectiveComponent = AttributeDirectiveComponent;
-//# sourceMappingURL=attribute-directive.component.js.map
+exports.StructuralDirectiveComponent = StructuralDirectiveComponent;
+//# sourceMappingURL=structural-directive.component.js.map

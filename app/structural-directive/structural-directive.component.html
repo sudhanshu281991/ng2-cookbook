@@ -1,0 +1,16 @@
+<h3>Structural Directive</h3>
+<p>Hip!!</p>
+<template>
+    <p>Hip!</p>
+</template>
+<p>Horray!</p>
+<p *ngIf="true">"Synatic Sugar" Version of ngIf</p>
+<template [ngIf]="true">
+    <p>"Template" Version of ngIf</p>
+</template>
+<h5 style="font-weight:bold;">"Synatic Sugar" Version of ngFor</h5>
+<p *ngFor="let user of users">{{user.name}}</p>
+<h5 style="font-weight:bold;">"Template" Version of ngFor</h5>
+<template ngFor let-user [ngForOf]="users">
+    <p>{{user.name}}</p>
+</template>

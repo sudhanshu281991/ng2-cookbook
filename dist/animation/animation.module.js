@@ -13,6 +13,8 @@ var common_1 = require('@angular/common');
 var animation_routing_1 = require('./animation.routing');
 var animation_component_1 = require('./animation.component');
 var attribute_directive_component_1 = require('../attribute-directive/attribute-directive.component');
+var highlight_directive_1 = require('../attribute-directive/highlight.directive');
+var structural_directive_component_1 = require('../structural-directive/structural-directive.component');
 var AnimationModule = (function () {
     function AnimationModule() {
     }
@@ -24,7 +26,9 @@ var AnimationModule = (function () {
             ],
             declarations: [
                 animation_component_1.AnimationComponent,
-                attribute_directive_component_1.AttributeDirectiveComponent
+                attribute_directive_component_1.AttributeDirectiveComponent,
+                highlight_directive_1.HighlightDirective,
+                structural_directive_component_1.StructuralDirectiveComponent
             ],
             providers: [
                 animation_routing_1.animationRoutingProviders
